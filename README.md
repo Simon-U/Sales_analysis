@@ -37,9 +37,10 @@ The data is pre loaded in the docker container and available there in the databa
 
 The table and underlying data have the following structure:
 
-+---------------+-----------+---------+
+
+
 | name          | type      | comment |
-+---------------+-----------+---------+
+|---------------| ----------|---------|
 | event_time    | timestamp |         |
 | event_type    | string    |         |
 | product_id    | bigint    |         |
@@ -49,18 +50,22 @@ The table and underlying data have the following structure:
 | price         | double    |         |
 | user_id       | bigint    |         |
 | user_session  | string    |         |
-+---------------+-----------+---------+
 
 The following steps were used to create the table:
 
-Markup : - Transform the csv into parquet file ina jupiter notebook
-         - Import the data file into the container
+ Markup : - Bullet list
+              - Nested bullet
+                  - Sub-nested bullet etc
+          - Bullet list item 2
+
+ Markup : - Transform the csv into parquet file ina jupiter notebook
+          - Import the data file into the container
            ```docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH```
-         - Create the database in Impala
+          - Create the database in Impala
            ``` 
            CREATE DATABASE sales;
            ```
-         - Create the table
+          - Create the table
             ```
             CREATE TABLE sales.sales (
             event_time TIMESTAMP,
@@ -74,7 +79,7 @@ Markup : - Transform the csv into parquet file ina jupiter notebook
             user_session STRING)
             STORED AS PARQUET;
             ```
-         -  Move the parquet file into the table directory using hdfs
+          -  Move the parquet file into the table directory using hdfs
              ```hdfs dfs -put *file path* *table path*```
 
 
