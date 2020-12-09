@@ -54,14 +54,15 @@ The table and underlying data have the following structure:
 The following steps were used to create the table:
 
 
- - Transform the csv into parquet file ina jupiter notebook
- - Import the data file into the container
-           ```docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH```
- - Create the database in Impala
+ 1. Transform the csv into parquet file ina jupiter notebook
+ 2. Import the data file into the container
+ 
+    ```docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH```
+ 3. Create the database in Impala
            ``` 
            CREATE DATABASE sales;
            ```
- - Create the table
+ 4. Create the table
             ```
             CREATE TABLE sales.sales (
             event_time TIMESTAMP,
@@ -75,7 +76,7 @@ The following steps were used to create the table:
             user_session STRING)
             STORED AS PARQUET;
             ```
- -  Move the parquet file into the table directory using hdfs
+ 5. Move the parquet file into the table directory using hdfs
              ```hdfs dfs -put *file path* *table path*```
 
 
