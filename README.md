@@ -81,7 +81,9 @@ The following steps were used to create the table:
             
  5. Move the parquet file into the table directory using hdfs
  
-             ```hdfs dfs -put *file path* *table path*```
+            ```
+            hdfs dfs -put *file path* *table path*
+            ```
 
 
 After the first analysis an update on the data might be neccessary to handle missing values appropriately or to add additional columns. 
