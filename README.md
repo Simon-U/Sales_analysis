@@ -9,8 +9,8 @@ Initial data exploration will be performed in a jupiter notebook.
 
 To work with the project the following technologies need to be installed:
 
-Markup : - Docker
-         - Jupiter Notebook
+ - Docker
+ - Jupiter Notebook
           
 To run the code sucessfully in the notebook the following packages need to be installed with the pip install command:
 
