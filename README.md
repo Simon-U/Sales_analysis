@@ -59,10 +59,12 @@ The following steps were used to create the table:
  
     ```docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH```
  3. Create the database in Impala
+ 
            ``` 
            CREATE DATABASE sales;
            ```
  4. Create the table
+ 
             ```
             CREATE TABLE sales.sales (
             event_time TIMESTAMP,
@@ -76,7 +78,9 @@ The following steps were used to create the table:
             user_session STRING)
             STORED AS PARQUET;
             ```
+            
  5. Move the parquet file into the table directory using hdfs
+ 
              ```hdfs dfs -put *file path* *table path*```
 
 
