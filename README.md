@@ -1,4 +1,4 @@
-# Analysing sales data
+# Analysing sales data 212
 
 In the following project the e-commerce sales data will be analysed.
 The data is stored in an Impala database running in a docker container.
