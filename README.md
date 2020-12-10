@@ -2,7 +2,7 @@
 
 In the following project the e-commerce sales data will be analysed.
 The data is stored in an Impala database running in a docker container.
-Initial data exploration will be performed in a jupiter notebook.
+Initial data exploration will be performed in a Jupyter notebook.
 
 
 ## Prerequisites
@@ -10,7 +10,7 @@ Initial data exploration will be performed in a jupiter notebook.
 To work with the project the following technologies need to be installed:
 
  - Docker
- - Jupiter Notebook
+ - Jupyter Notebook
           
 To run the code sucessfully in the notebook the following packages need to be installed with the pip install command:
 
@@ -54,43 +54,54 @@ The table and underlying data have the following structure:
 The following steps were used to create the table:
 
 
- 1. Transform the csv into parquet file ina jupiter notebook
+ 1. Transform the csv into parquet file ina Jupyter notebook
  2. Import the data file into the container
- 
-    ```docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH```
+    ```
+    docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
+    ```
  3. Create the database in Impala
  
-           ``` 
-           CREATE DATABASE sales;
-           ```
+    ``` 
+    CREATE DATABASE sales;
+    ```
  4. Create the table
  
-            ```
-            CREATE TABLE sales.sales (
-            event_time TIMESTAMP,
-            event_type STRING,
-            product_id BIGINT,
-            category_id BIGINT,
-            category_code STRING,
-            brand STRING,
-            price DOUBLE,
-            user_id BIGINT,
-            user_session STRING)
-            STORED AS PARQUET;
+    ```
+    CREATE TABLE sales.sales (
+    event_time TIMESTAMP,
+    event_type STRING,
+    product_id BIGINT,
+    category_id BIGINT,
+    category_code STRING,
+    brand STRING,
+    price DOUBLE,
+    user_id BIGINT,
+    user_session STRING)
+    STORED AS PARQUET;
             ```
             
  5. Move the parquet file into the table directory using hdfs
  
-            ```
-            hdfs dfs -put *file path* *table path*
-            ```
+    ```
+    hdfs dfs -put *file path* *table path*
+    ```
 
 
 After the first analysis an update on the data might be neccessary to handle missing values appropriately or to add additional columns. 
 
 ## Next steps
 
-After the inital set up of the environment the analysis will be performed via SQL and the jupiter notebook.
+After the inital set up of the environment the analysis will be performed via SQL and the Jupyter notebook.
+- Investigate data
+- Investigate Null values
+- First analysis (GROUP BY, standard metrics)
+
+
+## Ideas
+
+- Interesting could be a cart rate. How much and what from the cart got purchased at the end. And how long did it stay in the  cart.
+- Same from view to cart or purchase.
+- These could be analysied by user, category or brand
 
 
 
