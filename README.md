@@ -89,13 +89,6 @@ The following steps were used to create the table:
 
 After the first analysis an update on the data might be neccessary to handle missing values appropriately or to add additional columns. 
 
-## Next steps
-
-After the inital set up of the environment the analysis will be performed via SQL and the Jupyter notebook.
-- Investigate data
-- Investigate Null values
-- First analysis (GROUP BY, standard metrics)
-
 
 ## Ideas
 
