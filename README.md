@@ -11,10 +11,6 @@ To work with the project the following technologies need to be installed:
 
  - Docker
  - Jupyter Notebook
- 
-They are set up is shown in the following picture:
-
-![set_up](https://github.com/Simon-U/Sales_analysis/tree/master/images/set_up.png)
           
 To run the code sucessfully in the notebook the following packages need to be installed with the pip install command:
 
