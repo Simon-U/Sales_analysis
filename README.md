@@ -14,7 +14,7 @@ To work with the project the following technologies need to be installed:
  
 They are set up is shown in the following picture:
 
-![Set up](/images/Set up.png)
+![set_up](https://github.com/Simon-U/Sales_analysis/tree/master/images/set_up.png)
           
 To run the code sucessfully in the notebook the following packages need to be installed with the pip install command:
 
