@@ -11,6 +11,10 @@ To work with the project the following technologies need to be installed:
 
  - Docker
  - Jupyter Notebook
+ 
+They are set up is shown in the following picture:
+
+![Set up](/images/Set up.png)
           
 To run the code sucessfully in the notebook the following packages need to be installed with the pip install command:
 
