@@ -9,10 +9,10 @@ Initial data exploration will be performed in a Jupyter notebook.
 
 To work with the project the following technologies need to be installed:
 
- - Docker
- - Jupyter Notebook
-          
-To run the code sucessfully in the notebook the following packages need to be installed with the pip install command:
+ - Docker
+ - Jupyter Notebook
+          
+To run the code successfully in the notebook the following packages need to be installed with the pip install command:
 
 ```
 import pandas as pd
@@ -27,29 +27,37 @@ To start the docker container with the database navigate in the console to the f
 docker-compose up
 ```
 
+The database can be accessed by attaching to the container and running the command:
+
+```
+impala-shell
+```
+Issue:
+Sometimes the container is set up properly but after running the impala-shell command one cannot connect. So far, the reason is unknown, but a proper connection can be established with restarting the container (1-3 times).
+
 ## Data sources and table structure
 
-The data ist from Kaggle and can be found under the following link:
+The data is from Kaggle and can be found under the following link:
 
 https://www.kaggle.com/mkechinov/ecommerce-behavior-data-from-multi-category-store
 
-The data is pre loaded in the docker container and available there in the database sales and table sales.
+The data is preloaded in the docker container and available there in the database sales and table sales.
 
 The table and underlying data have the following structure:
 
 
 
-| name          | type      | comment |
+| name          | type      | comment |
 |---------------| ----------|---------|
-| event_time    | timestamp |         |
-| event_type    | string    |         |
-| product_id    | bigint    |         |
-| category_id   | bigint    |         |
-| category_code | string    |         |
-| brand         | string    |         |
-| price         | double    |         |
-| user_id       | bigint    |         |
-| user_session  | string    |         |
+| event_time    | timestamp |         |
+| event_type    | string    |         |
+| product_id    | bigint    |         |
+| category_id   | bigint    |         |
+| category_code | string    |         |
+| brand         | string    |         |
+| price         | double    |         |
+| user_id       | bigint    |         |
+| user_session  | string    |         |
 
 The following steps were used to create the table:
 
@@ -87,18 +95,17 @@ The following steps were used to create the table:
     ```
 
 
-After the first analysis an update on the data might be neccessary to handle missing values appropriately or to add additional columns. 
+After the first analysis an update on the data might be necessary to handle missing values appropriately or to add additional columns. 
 
 
 ## Ideas
 
-- Interesting could be a cart rate. How much and what from the cart got purchased at the end. And how long did it stay in the  cart.
+- Interesting could be a cart rate. How much and what from the cart got purchased at the end. And how long did it stay in the  cart.
 - Same from view to cart or purchase.
-- These could be analysied by user, category or brand
+- These could be analysed by user, category or brand
 
 
 
 ## Authors
 
 * **Simon Unterbusch**
-
